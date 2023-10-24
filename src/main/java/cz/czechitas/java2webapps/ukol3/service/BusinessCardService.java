@@ -95,4 +95,8 @@ public class BusinessCardService {
     public void addNewBusinessCard(BusinessCard businessCard) {
         businessCardList.add(businessCard);
     }
+
+    public void editBusinessCard(int id, BusinessCard businessCard) {
+        businessCardList.set(id, businessCard);
+    }
 }

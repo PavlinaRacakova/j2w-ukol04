@@ -32,6 +32,7 @@ public class BusinessCardController {
     ModelAndView result = new ModelAndView("detail");
     result.addObject("businessCard", service.getById(id));
     result.addObject("userDidntProvideParameterMessage", service.getUserDidntProvideParameterMessage());
+    result.addObject("businessCardId", id);
     return result;
   }
 
@@ -45,4 +46,19 @@ public class BusinessCardController {
     service.addNewBusinessCard(businessCard);
     return "redirect:/";
   }
+
+  @GetMapping("/edit/{id}")
+  public ModelAndView displayEditBusinessCardPage(@PathVariable int id) {
+    ModelAndView result = new ModelAndView("edit");
+    result.addObject("businessCard", service.getById(id));
+    result.addObject("businessCardId", id);
+    return result;
+  }
+
+  @PostMapping("/edit/{id}")
+  public String editBusinessCard(@PathVariable int id, BusinessCard businessCard) {
+    service.editBusinessCard(id, businessCard);
+    return "redirect:/detail/{id}";
+  }
+
 }

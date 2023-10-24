@@ -29,6 +29,7 @@
 
     <nav>
         <a href="/">◂ Back</a>
+        <a href="/edit/${businessCardId}">✎ Edit</a>
     </nav>
 </div>
 </body>
