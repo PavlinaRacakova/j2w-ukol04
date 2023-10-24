@@ -6,27 +6,27 @@
 </head>
 <body>
 <div class="seznam">
-    [#list seznam as vizitka]
-    <a href="/detail/${vizitka?index}">
+    [#list businessCardList as businessCard]
+    <a href="/detail/${businessCard?index}">
         <div class="vizitka">
-            <div class="jmeno">Dita (Přikrylová) Formánková</div>
-            <div class="firma">Czechitas z. s.</div>
+            <div class="jmeno">${businessCard.name()}</div>
+            <div class="firma">${businessCard.company()}</div>
             <div class="udaje">
                 <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
+                    <div>${businessCard.street()}</div>
+                    <div>${businessCard.townAndZipCode()}</div>
                 </div>
                 <div class="kontakty">
-                    <div><i class="bi bi-at"></i> dita@example.com</div>
-                    <div><i class="bi bi-phone"></i> +420 800123456</div>
-                    <div><i class="bi bi-globe"></i> www.czechitas.cz</div>
+                    <div><i class="bi bi-at"></i> ${(businessCard.email())!userDidntProvideParameterMessage}</div>
+                    <div><i class="bi bi-phone"></i> ${(businessCard.cellPhone())!userDidntProvideParameterMessage}</div>
+                    <div><i class="bi bi-globe"></i> ${(businessCard.web())!userDidntProvideParameterMessage}</div>
                 </div>
             </div>
         </div>
     </a>
     [/#list]
 
-    <a href="/nova">
+    <a href="/new">
         <div class="vizitka vizitka--nova">
             <svg width="100" height="100">
                 <rect width="20" height="100" x="40" y="0" fill="white" />
