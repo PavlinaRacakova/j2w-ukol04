@@ -99,4 +99,8 @@ public class BusinessCardService {
     public void editBusinessCard(int id, BusinessCard businessCard) {
         businessCardList.set(id, businessCard);
     }
+
+    public void deleteBusinessCard(int id) {
+        businessCardList.remove(id);
+    }
 }

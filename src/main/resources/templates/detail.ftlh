@@ -3,6 +3,8 @@
 <html lang="cs">
 <head>
     [#include "_common/head.ftlh"]
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 <div class="detail">
@@ -28,8 +30,16 @@
     </div>
 
     <nav>
-        <a href="/">◂ Back</a>
-        <a href="/edit/${businessCardId}">✎ Edit</a>
+        <form action="/" style="display: inline-block; margin-right: 10px;">
+            <input type="submit" class="btn btn-success" value="🡨 Back" />
+        </form>
+        <form action="/edit/${businessCardId}" style="display: inline-block; margin-right: 10px;">
+            <input type="submit" class="btn btn-success" value="️🖊 Edit" />
+        </form>
+        <form method="post" action="/delete">
+            <input type="hidden" name="id" value="${businessCardId}" />
+            <button type="submit" class="btn btn-success">⌫ Delete</button>
+        </form>
     </nav>
 </div>
 </body>

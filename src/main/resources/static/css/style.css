@@ -131,3 +131,8 @@ a:hover .vizitka {
     margin: auto auto 50px;
     line-height: 100px;
 }
+
+nav form {
+    display: inline-block;
+    margin-right: 10px;
+}

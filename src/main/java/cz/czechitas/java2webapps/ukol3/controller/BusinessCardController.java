@@ -69,4 +69,10 @@ public class BusinessCardController {
     service.editBusinessCard(id, businessCard);
     return "redirect:/detail/{id}";
   }
+
+  @PostMapping("/delete")
+  public String delete(int id) {
+    service.deleteBusinessCard(id);
+    return "redirect:/";
+  }
 }
