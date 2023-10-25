@@ -15,9 +15,9 @@
                 <div>${businessCard.townAndZipCode()}</div>
             </div>
             <div class="kontakty">
-                <div><i class="bi bi-at"></i>${(businessCard.email())!userDidntProvideParameterMessage}</div>
-                <div><i class="bi bi-phone"></i>${(businessCard.cellPhone())!userDidntProvideParameterMessage}</div>
-                <div><i class="bi bi-globe"></i>${(businessCard.web())!userDidntProvideParameterMessage}</div>
+                <div><i class="bi bi-at"></i> ${businessCard.email()!userDidntProvideParameterMessage}</div>
+                <div><i class="bi bi-phone"></i> ${businessCard.cellPhone()!userDidntProvideParameterMessage}</div>
+                <div><i class="bi bi-globe"></i> ${businessCard.web()!userDidntProvideParameterMessage}</div>
             </div>
         </div>
     </div>

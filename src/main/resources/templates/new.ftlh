@@ -29,7 +29,7 @@
                    placeholder="Town and Zip Code" required>
         </div>
         <div class="col-md-6">
-            <input type="text" class="form-control" name="email" id="email" placeholder="E-mail">
+            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
         </div>
         <div class="col-md-6">
             <input type="text" class="form-control" name="cellPhone" id="cellPhone" placeholder="Cell Phone">

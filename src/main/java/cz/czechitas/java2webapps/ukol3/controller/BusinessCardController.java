@@ -2,8 +2,11 @@ package cz.czechitas.java2webapps.ukol3.controller;
 
 import cz.czechitas.java2webapps.ukol3.entity.BusinessCard;
 import cz.czechitas.java2webapps.ukol3.service.BusinessCardService;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,6 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class BusinessCardController {
   private final BusinessCardService service;
+
+  @InitBinder
+  public void initBinder(WebDataBinder binder)
+  {
+    binder.registerCustomEditor(String.class,new StringTrimmerEditor(true));
+  }
 
   public BusinessCardController(BusinessCardService service) {
     this.service = service;
@@ -60,5 +69,4 @@ public class BusinessCardController {
     service.editBusinessCard(id, businessCard);
     return "redirect:/detail/{id}";
   }
-
 }
